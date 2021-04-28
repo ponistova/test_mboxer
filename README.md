@@ -14,7 +14,3 @@
 6. Pre každý test máte pod linkom uvedené, čo sa posielalo a v akom stave skončil.
 7. Ak bol nejaký chybový výstup (niečo padlo), chybový výstup vidíte pod linkom err.
 
-## Ako testovať jeden test
-
-Môžete skúšať aj jednotlivé testy: spustite Váš program a potom skript test.sh v podadresári testu. Potom uvidíte protokol na termináli.
-
