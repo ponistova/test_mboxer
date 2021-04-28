@@ -1,6 +1,0 @@
-Traceback (most recent call last):
-  File "/home/gejza/vyuka/l2021/ps/zadanie1/tests/test06/../../riesenia/Tomas-Homola/mboxer/mboxer.py", line 152, in <module>
-    method = f.readline().strip() # poznamka pre autora: do .strip() mozu ist aj konkretne znaky, ktore cheme dat prec, napriklad s = "...slovo,,,"; s.strip(".,") -> s == "slovo"
-  File "/usr/lib/python3.9/socket.py", line 704, in readinto
-    return self._sock.recv_into(b)
-ConnectionResetError: [Errno 104] Connection reset by peer

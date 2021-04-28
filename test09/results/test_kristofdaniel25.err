@@ -1,8 +1,0 @@
-Traceback (most recent call last):
-  File "/home/gejza/vyuka/l2021/ps/zadanie1/tests/test09/../../riesenia/kristofdaniel25/ps2021Kristof/serverKristof.py", line 135, in <module>
-    current_status.send_status(f)
-  File "/home/gejza/vyuka/l2021/ps/zadanie1/tests/test09/../../riesenia/kristofdaniel25/ps2021Kristof/serverKristof.py", line 19, in send_status
-    f.flush()
-  File "/usr/lib/python3.9/socket.py", line 722, in write
-    return self._sock.send(b)
-BrokenPipeError: [Errno 32] Broken pipe

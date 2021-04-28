@@ -1,6 +1,0 @@
-Traceback (most recent call last):
-  File "/home/gejza/vyuka/l2021/ps/zadanie1/tests/test04/../../riesenia/xboratkova/mboxer/tcp_mailserver.py", line 35, in <module>
-    data=f.readline()
-  File "/usr/lib/python3.9/socket.py", line 704, in readinto
-    return self._sock.recv_into(b)
-ConnectionResetError: [Errno 104] Connection reset by peer

@@ -1,4 +1,0 @@
-Traceback (most recent call last):
-  File "/home/gejza/vyuka/l2021/ps/zadanie1/tests/test09/../../riesenia/xboratkova/mboxer/tcp_mailserver.py", line 58, in <module>
-    dirs = os.listdir("mojmail2")
-FileNotFoundError: [Errno 2] No such file or directory: 'mojmail2'
