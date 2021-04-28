@@ -16,3 +16,8 @@
 *.spl
 *.png
 *.synctex.gz
+test??/results/*
+source/*
+mboxer.py
+test01/xxx
+test02/xxx
