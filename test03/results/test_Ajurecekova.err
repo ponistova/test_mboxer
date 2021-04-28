@@ -1,0 +1,6 @@
+Traceback (most recent call last):
+  File "/home/gejza/vyuka/l2021/ps/zadanie1/tests/test03/../../riesenia/Ajurecekova/mboxer/mail.py", line 135, in <module>
+    write_method(f)
+  File "/home/gejza/vyuka/l2021/ps/zadanie1/tests/test03/../../riesenia/Ajurecekova/mboxer/mail.py", line 32, in write_method
+    f.write('100 Ok'.encode('UTF-8'))
+ValueError: write to closed file

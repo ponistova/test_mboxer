@@ -1,0 +1,17 @@
+==================
+>>> Filename:req_respA.yaml
+---
+C->S: b'WRITE\n'
+C->S: b'Mailbox:xxx\n'
+C->S: b'Content-length:10\n'
+C->S: b'\n'
+C->S: b'0123456789'
+---
+>>> End request, awaiting response
+>>> TIMEOUT after 1 seconds
+>>> Timed out while reading status
+>>> Exitting test
+-------------
+-------------
+celkom 4
+-rw-r--r-- 1 gejza gejza 10 apr 28 11:54 781e5e245d69b566979b86e28d23f2c7

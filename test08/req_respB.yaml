@@ -1,0 +1,9 @@
+---
+method: LS
+headers:
+  Mailbox: yyy
+content: ''
+---
+status: 203
+headers: {}
+content: ''

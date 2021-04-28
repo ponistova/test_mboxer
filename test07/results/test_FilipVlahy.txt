@@ -1,0 +1,16 @@
+==================
+>>> Filename:req_respA.yaml
+---
+C->S: b'LS\n'
+C->S: b'Mailbox:xxx\n'
+C->S: b'\n'
+---
+>>> End request, awaiting response
+S->C: '100 OK\n'
+S->C: 'Number-of-messages:2\n'
+S->C: '\n'
+S->C: end of headers
+>>> TIMEOUT after 1 seconds
+>>> Timed out while reading content
+>>> Exitting test
+-------------

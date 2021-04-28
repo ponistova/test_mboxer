@@ -1,0 +1,10 @@
+Traceback (most recent call last):
+  File "/home/gejza/vyuka/l2021/ps/zadanie1/tests/test05/test.py", line 189, in <module>
+    response_real=ResponseFromSocket(f)
+  File "/home/gejza/vyuka/l2021/ps/zadanie1/tests/test05/test.py", line 118, in __init__
+    line_out=readline_tee(f)
+  File "/home/gejza/vyuka/l2021/ps/zadanie1/tests/test05/test.py", line 37, in readline_tee
+    line=f.readline().decode('utf-8')
+  File "/usr/lib/python3.9/socket.py", line 704, in readinto
+    return self._sock.recv_into(b)
+ConnectionResetError: [Errno 104] Connection reset by peer

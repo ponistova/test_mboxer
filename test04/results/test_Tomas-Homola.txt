@@ -1,0 +1,31 @@
+==================
+>>> Filename:req_respA.yaml
+---
+C->S: b'READ\n'
+C->S: b'Mailbox:xxx\n'
+C->S: b'Message:3749f52bb326ae96782b42dc0a97b4c1\n'
+C->S: b'\n'
+---
+>>> End request, awaiting response
+S->C: '100 OK\n'
+S->C: 'Content-length:11\n'
+S->C: '\n'
+S->C: end of headers
+S->C content: b'\n0123456789'
+---
+>>> Unexpected response:
+>>> Got response: Response: status=100 headers={'Content-length': '11'} content=b'\n0123456789'
+>>> Expected: Response: status=100 headers={'Content-length': '11'} content=b'0123456789\n'
+==================
+>>> Filename:req_respB.yaml
+---
+C->S: b'READ\n'
+C->S: b'Mailbox:xxx\n'
+C->S: b'Message:3749f52bb326ae96782b42dc0a97b4c1\n'
+C->S: b'\n'
+---
+>>> End request, awaiting response
+S->C: '\n'
+>>> Expected status line, got something else instead
+>>> Exitting test
+-------------

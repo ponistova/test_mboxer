@@ -1,0 +1,18 @@
+==================
+>>> Filename:req_respA.yaml
+---
+C->S: b'WRITE\n'
+C->S: b'Mailbox:yyy\n'
+C->S: b'Content-length:20\n'
+C->S: b'\n'
+C->S: b'0123456789\n987634321\n'
+---
+>>> End request, awaiting response
+S->C: '203 No such mailbox'
+S->C: ''
+S->C: Server closed connection
+---
+>>> Unexpected response:
+>>> Got response: Response: status=203 headers={} content=b''
+>>> Expected: Response: status=100 headers={} content=b''
+-------------

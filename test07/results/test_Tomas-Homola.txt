@@ -1,0 +1,30 @@
+==================
+>>> Filename:req_respA.yaml
+---
+C->S: b'LS\n'
+C->S: b'Mailbox:xxx\n'
+C->S: b'\n'
+---
+>>> End request, awaiting response
+S->C: '100 OK\n'
+S->C: 'Number-of-messages:2\n'
+S->C: '\n'
+S->C: end of headers
+S->C: b'\n'
+S->C: b'some_other_file\n'
+---
+>>> Unexpected response:
+>>> Got response: Response: status=100 headers={'Number-of-messages': '2'} content=b'\nsome_other_file\n'
+>>> Expected: Response: status=100 headers={'Number-of-messages': '2'} content=b'some_other_file\n3749f52bb326ae96782b42dc0a97b4c1\n'
+==================
+>>> Filename:req_respB.yaml
+---
+C->S: b'LS\n'
+C->S: b'Mailbox:xxx\n'
+C->S: b'\n'
+---
+>>> End request, awaiting response
+S->C: '3749f52bb326ae96782b42dc0a97b4c1\n'
+>>> Expected status line, got something else instead
+>>> Exitting test
+-------------

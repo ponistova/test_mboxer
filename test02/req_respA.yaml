@@ -1,0 +1,10 @@
+---
+method: WRITE
+headers:
+  Mailbox: xxx
+  Content-length: 10
+content: '0123456789'
+---
+status: 100
+headers: {}
+content: ''

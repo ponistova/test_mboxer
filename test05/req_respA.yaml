@@ -1,0 +1,10 @@
+---
+method: READ
+headers:
+  Mailbox: yyy
+  Message: zzz
+content: ''
+---
+status: 201
+headers: {}
+content: ''

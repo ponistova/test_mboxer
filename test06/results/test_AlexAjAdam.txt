@@ -1,0 +1,15 @@
+==================
+>>> Filename:req_respA.yaml
+---
+C->S: b'READ\n'
+C->S: b'Mailbox:yyy\n'
+C->S: b'Message:zzz\n'
+C->S: b'\n'
+---
+>>> End request, awaiting response
+S->C: '203 No such mailbox\n'
+>>> TIMEOUT after 1 seconds
+>>> Timed out while reading headers
+>>> Probably the server did not write empty line after headers
+>>> Exitting test
+-------------

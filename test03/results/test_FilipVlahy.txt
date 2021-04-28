@@ -1,0 +1,15 @@
+==================
+>>> Filename:req_respA.yaml
+---
+C->S: b'WRITE\n'
+C->S: b'Mailbox:yyy\n'
+C->S: b'Content-length:20\n'
+C->S: b'\n'
+C->S: b'0123456789\n987634321\n'
+---
+>>> End request, awaiting response
+S->C: '203 No such mailbox\n'
+S->C: '53558b980b73062e0ec68dd44d58f1c0\n'
+>>> Expected a header, got something else instead
+>>> Exitting test
+-------------

@@ -1,0 +1,10 @@
+---
+method: LS
+headers:
+  Mailbox: xxx
+content: ''
+---
+status: 100
+headers:
+  Number-of-messages: "1"
+content: "781e5e245d69b566979b86e28d23f2c7\n"

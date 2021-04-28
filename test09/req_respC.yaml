@@ -1,0 +1,11 @@
+---
+method: READ
+headers:
+  Mailbox: xxx
+  Message: 3749f52bb326ae96782b42dc0a97b4c1
+content: ''
+---
+status: 100
+headers:
+  Content-length: "10"
+content: "0123456789"  

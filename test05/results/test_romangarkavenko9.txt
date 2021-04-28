@@ -1,0 +1,15 @@
+==================
+>>> Filename:req_respA.yaml
+---
+C->S: b'READ\n'
+C->S: b'Mailbox:yyy\n'
+C->S: b'Message:zzz\n'
+C->S: b'\n'
+---
+>>> End request, awaiting response
+S->C: '201 No such message\n'
+S->C: '\n'
+S->C: end of headers
+---
+>>> Got expected response, OK
+-------------

@@ -1,0 +1,9 @@
+---
+method: BUMBAC
+headers:
+  Mailbox: xxx
+content: ''
+---
+status: 204
+headers: {}
+content: ''
