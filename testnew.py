@@ -55,6 +55,8 @@ class Request:
         self.method=d['method']
         self.headers=d['headers']
         self.content=d['content']
+        if type(self.content) is str:
+            self.content=self.content.encode('utf-8')
 
     def send(self,f):
         write_tee(f,f'{self.method}\n'.encode('utf-8'))
@@ -63,7 +65,7 @@ class Request:
         # po hlavickach prazdny riadok
         write_tee(f,'\n'.encode('utf-8'))
         # obsah v teste je vždy reťazec, to som trochu nedomyslel
-        write_tee(f,self.content.encode('utf-8'))
+        write_tee(f,self.content)
 
 class Response:
 
@@ -88,7 +90,10 @@ class ResponseFromDict(Response):
             raise ValueError('non-numeric status in response')
         self.status=d['status']
         self.headers=d['headers']
-        self.content=d['content'].encode('utf-8')
+        self.content=d['content']
+        if type(self.content) is str:
+            self.content=self.content.encode('utf-8')
+
 
 class ResponseFromSocket(Response):
     
@@ -189,13 +194,15 @@ for req_resp_fnm in sorted(glob.glob('req_resp*.yaml')):
             response_real=ResponseFromSocket(f)
         except TimeOutException:
             print_and_flush(f'>>> Timeout after {TIMEOUT} seconds! (probably a deadlock)')
-            print_and_flush('>>> Exitting')
+            print_and_flush('>>> Exitting test')
             sys.exit(1)
         print_and_flush('---')
         if response_real!=response_expect:
             print_and_flush('>>> Unexpected response:')
             print_and_flush('>>> Got response:',response_real)
             print_and_flush('>>> Expected:',response_expect)
+            print_and_flush('>>> Exitting test')
+            sys.exit(1)
         else:
             print_and_flush('>>> Got expected response, OK')
     

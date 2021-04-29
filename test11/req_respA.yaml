@@ -1,0 +1,18 @@
+---
+method: READ
+headers:
+  Mailbox: xxx
+  Message: bitmapa.png
+content: ''
+---
+status: 100
+headers:
+  Content-length: "359"
+content: !!binary |
+  iVBORw0KGgoAAAANSUhEUgAAAAkAAAAJCAYAAADgkQYQAAAACXBIWXMAAA7DAAAOwwHHb6hkAAAA
+  GXRFWHRTb2Z0d2FyZQB3d3cuaW5rc2NhcGUub3Jnm+48GgAAAPRJREFUGJVtir1Kw1AARs/NX3OH
+  TC0qBhwbF5eORSiIL+Aj1FldnOwgt0VwchJBcfANXNxc7Au0IGTo5BNYgpI0iU16XYwY8Cwf3+EA
+  AGqDGqoLw9PqWQBC6AcpB95i4dxa1mq7LPWZ1lzVIq3FE4hr3//s2HYpms1sNZlsJlVk/Oxzlpli
+  Or2Ts9mNGwTvWsrlAVz4v5HrFoMgmOee90WjUTAavditVrLjOHkIat8AdZhlVj+KpO71+mkYrtFu
+  H+kokm9FYd4DhQC1C2IdMFx3eeJ5eTdNrdc4vuzwP2rLNM8TGB7/tWY9Gn9ovTcH/QjjuLLfe2pV
+  rYhF7yYAAAAASUVORK5CYII=
