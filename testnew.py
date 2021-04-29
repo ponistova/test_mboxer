@@ -54,7 +54,9 @@ class Request:
                 raise ValueError(f'{name} missing in request')
         self.method=d['method']
         self.headers=d['headers']
+        # self.content je vzdy typu bytes
         self.content=d['content']
+        # ak je tam text, prevedie sa
         if type(self.content) is str:
             self.content=self.content.encode('utf-8')
 
@@ -64,7 +66,6 @@ class Request:
             write_tee(f,f'{name}:{value}\n'.encode('utf-8'))
         # po hlavickach prazdny riadok
         write_tee(f,'\n'.encode('utf-8'))
-        # obsah v teste je vždy reťazec, to som trochu nedomyslel
         write_tee(f,self.content)
 
 class Response:
@@ -164,7 +165,7 @@ class ResponseFromSocket(Response):
         else:
             self.content=b''
 
-signal.alarm(2)
+signal.alarm(TIMEOUT)
 s=socket.socket(socket.AF_INET,socket.SOCK_STREAM)
 s.connect(('localhost',9999))
 f=s.makefile(mode='rwb')
