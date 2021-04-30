@@ -14,7 +14,6 @@
 *.toc
 .directory
 *.spl
-*.png
 *.synctex.gz
 test??/results/*
 source/*
