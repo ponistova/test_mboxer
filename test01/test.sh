@@ -1,5 +1,5 @@
 killall python3 2>/dev/null
-rm -r xxx
+rm -r xxx 2>/dev/null
 mkdir xxx
 ( python3 "$1"  >/dev/null& )
 PID=$!
