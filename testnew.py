@@ -71,10 +71,19 @@ class Request:
 class Response:
 
     def __eq__(self,other):
-        return \
-            self.status==other.status and \
-            self.headers==other.headers and \
-            self.content==other.content
+        if self.status!=other.status or \
+            self.headers!=other.headers:
+                return False
+        if request.method == 'LS':
+            # utriedit!
+            try:
+                self_filenames=self.content.decode('utf-8').splitlines().sort()
+                other_filenames=other.content.decode('utf-8').splitlines().sort()
+                return self_filenames==other_filenames
+            except UnicodeDecodeError:
+                return False
+        else:
+            return self.content==other.content
 
     def __repr__(self):
 
@@ -82,7 +91,7 @@ class Response:
 
 class ResponseFromDict(Response):
 
-    def __init__(self,d):
+    def __init__(self,d,request):
 
         for name in ('status','headers','content'):
             if not name in d:
@@ -94,13 +103,15 @@ class ResponseFromDict(Response):
         self.content=d['content']
         if type(self.content) is str:
             self.content=self.content.encode('utf-8')
+        self.request=request
 
 
 class ResponseFromSocket(Response):
     
-    def __init__(self,f):
+    def __init__(self,f,request):
         # citanie statusu
 
+        self.request=request
         try:
             status_in=readline_tee(f)
         except TimeOutException:
@@ -180,7 +191,7 @@ for req_resp_fnm in sorted(glob.glob('req_resp*.yaml')):
         request=Request(request_d)
         # response, ktoru ocakavam
         try:
-            response_expect=ResponseFromDict(response_d)
+            response_expect=ResponseFromDict(response_d,request)
         except ValueError:
             print_and_flush(f'>>> File {req_resp_fnm} is not correct',file=sys.stderr)
             raise
@@ -192,7 +203,7 @@ for req_resp_fnm in sorted(glob.glob('req_resp*.yaml')):
         # precitame response
         signal.alarm(TIMEOUT)
         try:
-            response_real=ResponseFromSocket(f)
+            response_real=ResponseFromSocket(f,request)
         except TimeOutException:
             print_and_flush(f'>>> Timeout after {TIMEOUT} seconds! (probably a deadlock)')
             print_and_flush('>>> Exitting test')
