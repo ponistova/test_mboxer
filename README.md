@@ -9,7 +9,7 @@
 
 ## Ako testovať hromadne všetky testy
 
-1. Skopírujte do tohto adresára váš program a nazvite ho `reader.py`.
+1. Skopírujte do tohto adresára váš program a nazvite ho `mboxer.py`.
 2. Spustite skript `runtests.sh`.
 3. Spustia sa testy. Počkajte, kým dobehnú, pár sekúnd to trvá.
 4. Vznikne súbor `results.html`, ktorý si môžete otvoriť v browseri.
