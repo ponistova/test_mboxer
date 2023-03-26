@@ -8,7 +8,7 @@ PIDRIESENIE=$!
 sleep 0.2
 python3 test.py
 EXIT_STATUS=$?
-kill -sTERM $PIDRIESENIE 2>/dev/null
+kill -s TERM $PIDRIESENIE 2>/dev/null
 echo '>>>' Killed PID "$PIDRIESENIE"
 echo '>>> Checking with ps:' $(ps --pid $PIDRIESENIE)
 echo '>>> Test exit status:' "$EXIT_STATUS"
