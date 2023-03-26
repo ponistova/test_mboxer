@@ -10,7 +10,7 @@ python3 test.py
 EXIT_STATUS=$?
 kill -s TERM $PIDRIESENIE 2>/dev/null
 echo '>>>' Killed PID "$PIDRIESENIE"
-echo '>>> Checking with ps:' $(ps --pid $PIDRIESENIE)
+echo '>>> Checking with ps:' $(ps -p $PIDRIESENIE)
 echo '>>> Test exit status:' "$EXIT_STATUS"
 if [ -e test_cleanup.sh ]
 then	
