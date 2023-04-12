@@ -84,8 +84,8 @@ while IFS=: read RIESENIE NAME ; do
 	    fi
         echo '</td>'
         cd ..
-        killall python 2>/dev/null
-        killall python3 2>/dev/null
+        #killall python 2>/dev/null
+        #killall python3 2>/dev/null
     done
     printf '\n' > /dev/stderr
     echo '</tr>'
